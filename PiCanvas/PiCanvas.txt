@@ -1,0 +1,127 @@
+author : Eric McGrath?
+
+Why make a Pi Canvas
+
+In the past digital artists have been limited to static images (prints) when creating wall art. A Pi Canvas allows digital art to be created and displayed on a wall just like a framed print. And the art is now dynamic which opens up new creative opportunities.
+
+What is a Pi Canvas
+
+A Pi Canvas is a Raspberry Pi mounted on a HDTV that has a USB connector to power the Raspberry Pi. The Pi Canvas has no keyboard, mouse, or TV remote control.  It is easy to use.  Just hang it on the wall,  plug it in,  press the power button,  and let it do its thing. It can be run 24/7 or turned off for power savings.   Also, the Pi Canvas could be made to interact with its environment through electronic sensors which opens up even more creative opportunities.
+
+How to make a Pi canvas
+
+This article describes one way to make a Pi Canvas for wall art. The hardware and software used are popular, open source, and well documented. Basic knowledge of the hardware and software is not covered here - there are many excellent tutorials available online.
+
+The Pi Canvas was developed in the Faulhaber Fab Lab at the Suncoast Science Center in Sarasota, Florida.  The Suncoast Science Center supports STEAM education (Science + Technology + Engineering + Art + Mathematics) for all ages.
+
+http://www.suncoastscience.org/           
+
+
+Pi Canvas hardware
+
+Here is a list of the hardware used to make a Pi Canvas.
+
+1  Raspberry Pi model B
+2  USB cable – 8 inch
+3  HDMI male to male coupler
+4  VIZIO HDTV (model E390-A1)
+	4.1  has a USB connector for Raspberry Pi power
+	4.2  has recessed area on back for attaching Raspberry Pi 			which allows flush wall mounting
+	4.3  has a narrow clean bezel which makes a nice frame
+
+
+
+
+Pi Canvas software
+
+Here is a list of the software used to make Pi Canvas artwork.
+
+1  RASPBIAN OPERATING SYSTEM
+2  CHROMIUM BROWSER - has kiosk mode for full screen operation 	and no browser initiated interaction with artwork (no 	screen blanking - etc)  
+3  HTML 5 CANVAS - good graphics capabilities and fast
+4  JAVASCRIPT - ideal language for browser
+
+This software combination runs surprisingly fast on the hardware.
+
+
+Pi Canvas configuration
+
+In addition to the normal Raspberry Pi setup the following steps are required to make a Pi Canvas with the listed hardware and software. A powered USB hub is needed because the HDTV does not supply adequate power for this step.
+ 
+1  raspi-config
+	enable boot to desktop
+2  install chromium browser
+3  install unclutter to keep mouse curser off screen 
+4  install x11-xserver-utils
+5  put sample artwork file (sample.html) in /home/pi/ 
+6  auto start chromium with artwork running
+	open /etc/xdg/lxsession/LXDE/autostart
+	comment out
+	#@lxpanel --profile LXDE 
+	#@pcmanfm --desktop --profile LXDE
+	#@xscreensaver -no-splash
+	add	
+	@xset s off
+	@xset -dpms
+	@xset s noblank
+	@chromium --kiosk --incognito /home/pi/sample.html
+
+7  to exit artwork press [CTRL+ALT+F2]
+
+8  to exit session   sudo halt
+
+Pi Canvas artwork
+
+The Suncoast Science Center has a display area for showcasing inventions of all kinds created in the Fab Lab. Here is a screen shot of a Pi Canvas on display in the Fab Lab display area. The artwork is titled LOOSE WEAVE DIGITAL FABRIC. It won an award at Art Center Sarasota “One World” exhibition.
+
+
+
+
+
+The artwork creates a new digital fabric every ten minutes.  Drawing the digital fabric is an important visual aspect of the artwork and takes about five minutes.
+The fabric color is random and the thread colors are random within +/- 45 degrees of the fabric color on the hsla color wheel.  Also the thread weight, count, and tension are random within limits.
+
+
+Pi Canvas sample artwork code
+
+The image on the screen cannot remain static for too long or the screen can be damaged – even on modern LCD displays.  Making the art dynamic alleviates this problem.  Here is a sample artwork file to run on a Pi Canvas.  It draws a randomly colored rectangle every five seconds.
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>sample</title>
+
+<script type="application/javascript">
+var canvasWidth = 400;  // also set in html canvas element
+var canvasHeight = 225;  // also set in html canvas element
+setInterval(eachTick, 1000);  // timer (ticking each second) 
+var count = 0;  // set tick counter to 0
+
+function eachTick(){  // called each second by timer
+count = count + 1;
+if(count == 1){
+draw();
+}
+if(count == 5){
+var cc = document.getElementById("canvas1").getContext("2d");
+cc.clearRect(0,0,canvasWidth, canvasHeight); // clears screen
+count = 0;
+}
+}
+function draw(){
+var cc = document.getElementById("canvas1").getContext("2d");
+var hue1 = Math.random()*360;
+var color1 = "hsla(" + hue1 + ",100%,50%,1)";
+cc.fillStyle = color1;
+var x1 = Math.random() * 100;
+var y1 = Math.random() * 100;
+cc.fillRect(x1,y1,150,100);
+}
+</script>
+</head>
+<body>
+<canvas id="canvas1" width="400" height="225"></canvas>
+</body>
+</html>
+
