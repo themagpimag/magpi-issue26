@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>sample</title>
+
+<script type="application/javascript">
+canvasWidth = 600;
+canvasHeight = 400;
+setInterval(eachTick, 1000);  // timer (ticking each second) 
+var count = 0;  // set tick counter to 0
+var canvas1 = document.getElementById("canvas1");
+canvas1.width = canvasWidth;  // also set in html canvas element
+canvas1.height = canvasHeight;  // also set in html canvas element
+
+function eachTick(){  // called each second by timer
+  count = count + 1;
+  if(count > -1){
+    draw();
+  }
+  if(count > 25){
+    var cc = document.getElementById("canvas1").getContext("2d");
+    cc.clearRect(0,0,canvasWidth, canvasHeight); // clears screen
+    count = 0;
+  }
+}
+
+function draw(){
+  var cc = document.getElementById("canvas1").getContext("2d");
+  var hue1 = Math.random()*360;
+  var hue2 = Math.random()*100;
+  var hue3 = Math.random()*100;
+  var color1 = "hsla(" + hue1 + "," + hue2 + "%," + hue3 + "%,1)";
+  cc.fillStyle = color1;
+  var x1 = Math.random() * 450;
+  var y1 = Math.random() * 300;
+  cc.fillRect(x1,y1,150,100);
+}
+</script>
+</head>
+<body>
+<canvas id="canvas1" width=600 height=400></canvas>
+</body>
+</html>
