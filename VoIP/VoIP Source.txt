@@ -1,0 +1,114 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                    
+
+
+After investigating a number of technology solutions that provide Voice over IP (VoIP) and IP Telephony Services, and scalability with support for the new trend of Unified Communications (UC) for Small Business, with support of Operating Systems and software Open Source, personally concluded that the only viable solution is through the Raspberry Pi board, investigated the cost solutions Server VoIP/UC investment exceeds $ 700, referring to the investment of $ 62.50 plate of Raspberry Pi and accessories, is unmatched. The Raspberry Pi solution (as base operating system based on Linux and Asterisk VoIP/UC server and software), not only responds to a conceptualization of Open Source, this includes a new "Open Hardware" which starts off strongly with this solution for a multitude of solutions and applications in different areas and sciences.
+
+This article contrasts the research consultancies indicate that solutions of VoIP / Unified Communications require a high risk and high costs for implementation.
+
+Introduction
+
+Over time telephony evolved steeply migrating from analogue to digital and IP Telephony based on VoIP and projecting Unified Communications (set of technologies that automate and unify communications), based on the use VoIP and IP Video. VoIP is the transmission of Voice over Internet Protocol, using protocols such as SIP, RTP, among others.
+
+Baseline
+
+To implement VoIP/UC is necessary to meet requirements of structured cabling according to the standards set by the industry and network equipment support differentiation to prioritize voice and video over data or other applications.
+
+Basic Components
+
+Server VoIP/UC: 
+* Hardware: Raspberry Pi, Model B (Plate Raspberry Pi, SDHC card 16 GB class 6, power supply, network cable and housing), bought in http://www.newark.com. 
+* Software: 
+o Operating System for Raspberry Pi: Linux, Debian based optimized for the Raspberry Pi. 
+o SoftPhone: LinPhone (Supports mobile devices and computers: Linux, Windows, Mac) https://www.linphone.org/.
+o Software for Server VoIP/UC, based Asterisk.
+
+
+
+
+
+In this article, the server support VoIP/UC hardware phone owners check a Hardphone supporting SIP Dlink DPH-150SE is used.
+
+Implementation
+
+For initial setup Server VoIP/UC, the Raspberry Pi Model B board is used with a power supply of 5 Volts at 700 mA, an SDHC card Transcend 16 GB Class 6 as recommended by the manufacturer regarding the http://elinux.org/RPi_Buying_Guide card settings as additional elements a USB keyboard, USB mouse, HDMI to HDMI monitor for initial connection and network cable or Category 5 e patch cord.
+
+
+For the "preparation of the SDHC card board Raspberry Pi", first you must download the image the operating system used for this project is Raspbian which is a Debian optimized for Raspberry Pi, this would be done in three However, the first from the manufacturer's website to download http://www.raspberrypi.org, the second is from the Raspbian http://www.raspbian.org/ website and the third from the web site for Asterisk Raspberry Pi http://www.raspberry-asterisk.org/, for this article we choose the third option, the image of Raspbian based on Debian Wheezy 7 or in which is included and pre-installed Asterisk is 11.5.0 download and FreePBX 2.11.0.10.
+
+The memory is formatted and loads the operating system image according to GETTING STARTED GUIDE according http://www.raspberrypi.org and http://www.raspbian.org/.
+
+Connects to the power supply of 5 Volt DC, the start, system requires a login as: root and password: raspberry, you can continue in console mode or turn the startx command is executed to start the windowed mode.
+
+
+
+It starts with the initial configurations of the operating system on Raspberry Pi, http://www.raspberrypi.org, you must set the IP address to manage the device remotely via LAN network on a computer running the application Putty http://www.putty.org/ and able to access internet from console run the following command
+
+
+
+Interfaces file is edited.
+
+
+
+
+Once implemented the hardware and server software VoIP/UC there are two ways to configure it, the first on the second console and graphical interface through. For the article the configuration is done through the graphical interface which is simple and easy to perform, using FreePBX http://www.freepbx.org/.
+
+FreePBX is an open source graphical user interface, which controls and manages Asterisk, is licensed under GPL, this need not be installed on Raspberry Pi, because it comes pre-installed image of RasPBX Asterisk 11.5.0 and FreePBX 2.11.0.10 http://www.raspberry-asterisk.org/.
+
+The network diagram is as follows:
+
+
+To start FreePBX is necessary to run the Server IP address VoIP/UC (Asterisk, 172.31.15.11) in a browser and entered to the console, the first 3 options FreePBX Administration, used for configuring Asterisk is observed; the second User Control Panel for users to enter for call control and personal settings and third Get Support for support of the official website of FreePBX, we entered into Administration, the default username is admin and password is admin, the console is set primarily with regard to Extensions, Calling Group, Conferences, Router Entry, Exit Router and IVR, including IP telephony or UC, http://wiki.freepbx.org/.
+
+
+
+In the Applications tab, select the option to configure Extensions, Add Extension, the device type Generic SIP Device is chosen among other configure options, User Extension 300, Display Name 300 in the Device Options option is configured: secret ext300, verify the port 5060 option and apply the changes by selecting Submit to update the changes and finally selecting the tab Apply Config to save your changes, perform this procedure with the other extensions that may be created (300-350).
+
+
+
+Then configure the IP phone terminals or extensions. The Hardphone (DPH-150SE, Dlink) according to the manufacturer changed the IP address to IP Address: 172.31.15.20, Router IP:172.31.15.1, SubnetMask: 255.255.255.224, DNS Server 1: 192.168.1.1. ROUTE Mode and DHCP Server options are disables and VOIP/SIP Setting option, verify the SIP Phone Port Number This 5060, in option REGISTER SERVER, the IP address of your Asterisk Server port is entered and in OTHERS activate on Enable Register with Proxy as illustrated in Fig.
+
+In the VOIP/SIP Account Setting option in the configure option ACCOUNT 1 SETTING configure the SIP phone account.
+
+
+
+The SoftPhone in the laptop, run linphone on the menu bar select Options/Preferences.
+
+
+
+Echo cancellation is activated in multimedia settings, Manage Accounts SIP determine the SIP account in this case has 302 and "302" on Default <sip:302@172.31.15.7> identity with the Add tab option increases the is registered in the server VoIP/UC (Raspberry Pi).
+
+Linphone and running Asterisk server for authentication extension password
+
+
+
+
+In Server VoIP/UC can raise various services like Conference Rooms, Interactive Voice Response IVR, Call Group, Income incoming and outgoing Calls on the line of the PSTN (conventional or SIP trunks) or for Internet.
+
+
+
+
+
+The Future
+
+The development of communications using VoIP, have driven Unified Communications systems where are unified into a single system and environment, Email services, Instant Messaging, Fax Servers, VoIP, Conferences, Video Conferences (sin ( Multipoint Control Unit, MCU), Partnership, among others. 
+
+
+WALBERTO ABAD 
+
+
+
