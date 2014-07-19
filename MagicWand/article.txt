@@ -1,0 +1,175 @@
+Magic Wand with Accelerometer
+Michael Giles
+Guest Writer
+
+Persistence of Vision
+
+POV displays create an image by quickly displaying one line of pixels at a time. When the device moves rapidly along a linear path the human eye can view the image as a whole. When I say rapid I mean rapid, at least one twenty-fifth of a second. At this speed an afterimage is seen in the retina and the viewer perceives the rapid succession of LED blinks as a full image.
+
+Operation
+
+The magic wand displays five vertical lines of pixels for each specific letter in a user defined string. The accelerometer is used to determine which direction the wand is swinging to avoid displaying the string in reverse.
+
+Parts
+
+To build the circuit I used Pi Prototyping Kit from OpenElectrons.com. It has multiple integrated circuit footprints and unwired through holes for great prototyping flexibility. For the accelerometer I used the LSM303 breakout board from OpenElectrons.com. 
+
+
+Full parts list for the project:
+1 – Raspberry Pi
+1 – Pi Prototyping kit (OpenElectrons.com)
+1 – LSM303 breakout (OpenElectrons.com)
+1 – SmartUPS (OpenElectrons.com)
+1 – PCF8574 chip, manufacturer part number PCF8574ADW
+1 – 10uf through hole capacitor, ESK106M050AC3AA
+2 – 82K through hole resistors, 271-82K-RC
+8 – 4mm flat top red diff LEDs, HLMPM201
+
+
+Magic Wand Assembly
+
+The circuit build for the magic wand required soldering of mostly through hole components as well as the surface mount PCF8574 chip. The datasheet showed the In/Out ports of P0-P7 to which I connected the eight LEDs. In the first build I placed a bussed resistor array between the 5V power and the LEDs to limit the current, but when I tested I realized the lights were extremely difficult to see in the daylight. I then shorted the resistor array and the LEDs became much more visible.
+
+Full schematic:
+
+Connecting the LSM303 breakout was by far the simplest part. The Pi Prototyping board has two I2C female connections for a quick plug in for breakout boards.
+
+Apparatus Assembly
+
+In order to move the LEDs fast enough to see the image, I attached the Raspberry Pi along with the Pi Prototyping board to a long flat wooden stick using screws and spacers. Wood was used to avoid any shorting that may occur. On the back of the stick I attached the SmartUPS to power the Raspberry Pi and make my device more mobile. The SmartUPS is powered by three AA batteries and, though it has several functions, is only used for power in this project. On the other end of the wooden stick I drilled a hole and attached a rod to be used as a handle. This allowed me to easily swing the magic wand around in a circle. 
+
+Installing Packages
+
+For this program I used the OpenElectrons_LSM303 package installed using the pip package manager.
+If you do not have pip you can get it by opening a terminal window and typing
+
+sudo easy_install pip
+
+to install the OpenElectrons_LSM303 package type
+
+sudo pip install OpenElectrons_LSM303
+
+this command will install the package as well as the OpenElectrons_i2c package needed for I2C functions.
+
+Programming
+
+In order to generate the ascii characters, I first created a look up table. The table is just a dictionary in which each character is a list containing five hexadecimal values. Each value generating one vertical line of pixels.
+
+#5x7 ascii characters lookup table
+lookuptable = {
+    ' ' : [0x00,0x00,0x00,0x00,0x00], '!' : [0x00,0x00,0x6f,0x00,0x00],
+    '"' : [0x00,0x07,0x00,0x07,0x00], '#' : [0x14,0x7f,0x14,0x7f,0x14],
+    '$' : [0x00,0x07,0x04,0x1e,0x00], '%' : [0x23,0x13,0x08,0x64,0x62],
+    '&' : [0x36,0x49,0x56,0x20,0x50], '\'' : [0x00,0x00,0x07,0x00,0x00],
+    '(' : [0x00,0x1c,0x22,0x41,0x00], ')' : [0x00,0x41,0x22,0x1c,0x00],
+    '*' : [0x14,0x08,0x3e,0x08,0x14], '+' : [0x08,0x08,0x3e,0x08,0x08],
+    ',' : [0x00,0x50,0x30,0x00,0x00], '-' : [0x08,0x08,0x08,0x08,0x08],
+    '.' : [0x00,0x60,0x60,0x00,0x00], '/' : [0x20,0x10,0x08,0x04,0x02],
+    '0' : [0x3e,0x51,0x49,0x45,0x3e], '1' : [0x00,0x42,0x7f,0x40,0x00],
+    '2' : [0x42,0x61,0x51,0x49,0x46], '3' : [0x21,0x41,0x45,0x4b,0x31],
+    '4' : [0x18,0x14,0x12,0x7f,0x10], '5' : [0x27,0x45,0x45,0x45,0x39],
+    '6' : [0x3c,0x4a,0x49,0x49,0x30], '7' : [0x01,0x71,0x09,0x05,0x03],
+    '8' : [0x36,0x49,0x49,0x49,0x36], '9' : [0x06,0x49,0x49,0x29,0x1e],
+    ':' : [0x00,0x36,0x36,0x00,0x00], ';' : [0x00,0x56,0x36,0x00,0x00],
+    '<' : [0x08,0x14,0x22,0x41,0x00], '=' : [0x14,0x14,0x14,0x14,0x14],
+    '>' : [0x00,0x41,0x22,0x14,0x08], '?' : [0x02,0x01,0x51,0x09,0x06],
+    '@' : [0x3e,0x41,0x5d,0x49,0x4e], 'A' : [0x7e,0x09,0x09,0x09,0x7e],
+    'B' : [0x7f,0x49,0x49,0x49,0x36], 'C' : [0x3e,0x41,0x41,0x41,0x22],
+    'D' : [0x7f,0x41,0x41,0x41,0x3e], 'E' : [0x7f,0x49,0x49,0x49,0x41],
+    'F' : [0x7f,0x09,0x09,0x09,0x01], 'G' : [0x3e,0x41,0x49,0x49,0x7a],
+    'H' : [0x7f,0x08,0x08,0x08,0x7f], 'I' : [0x00,0x41,0x7f,0x41,0x00],
+    'J' : [0x20,0x40,0x41,0x3f,0x01], 'K' : [0x7f,0x08,0x14,0x22,0x41],
+    'L' : [0x7f,0x40,0x40,0x40,0x40], 'M' : [0x7f,0x02,0x0c,0x02,0x7f],
+    'N' : [0x7f,0x04,0x08,0x10,0x7f], 'O' : [0x3e,0x41,0x41,0x41,0x3e],
+    'P' : [0x7f,0x09,0x09,0x09,0x06], 'Q' : [0x3e,0x41,0x51,0x21,0x5e],
+    'R' : [0x7f,0x09,0x19,0x29,0x46], 'S' : [0x46,0x49,0x49,0x49,0x31],
+    'T' : [0x01,0x01,0x7f,0x01,0x01], 'U' : [0x3f,0x40,0x40,0x40,0x3f],
+    'V' : [0x0f,0x30,0x40,0x30,0x0f], 'W' : [0x3f,0x40,0x30,0x40,0x3f],
+    'X' : [0x63,0x14,0x08,0x14,0x63], 'Y' : [0x07,0x08,0x70,0x08,0x07],
+    'Z' : [0x61,0x51,0x49,0x45,0x43], '[' : [0x3c,0x4a,0x49,0x29,0x1e],
+    '\\' : [0x02,0x04,0x08,0x10,0x20], ']' : [0x00,0x41,0x7f,0x00,0x00],
+    '^' : [0x04,0x02,0x01,0x02,0x04], '_' : [0x40,0x40,0x40,0x40,0x40],
+    '`' : [0x00,0x00,0x03,0x04,0x00], 'a' : [0x20,0x54,0x54,0x54,0x78],
+    'b' : [0x7f,0x48,0x44,0x44,0x38], 'c' : [0x38,0x44,0x44,0x44,0x20],
+    'd' : [0x38,0x44,0x44,0x48,0x7f], 'e' : [0x38,0x54,0x54,0x54,0x18],
+    'f' : [0x08,0x7e,0x09,0x01,0x02], 'g' : [0x0c,0x52,0x52,0x52,0x3e],
+    'h' : [0x7f,0x08,0x04,0x04,0x78], 'i' : [0x00,0x44,0x7d,0x40,0x00],
+    'j' : [0x20,0x40,0x44,0x3d,0x00], 'k' : [0x00,0x7f,0x10,0x28,0x44],
+    'l' : [0x00,0x41,0x7f,0x40,0x00], 'm' : [0x7c,0x04,0x18,0x04,0x78],
+    'n' : [0x7c,0x08,0x04,0x04,0x78], 'o' : [0x38,0x44,0x44,0x44,0x38],
+    'p' : [0x7c,0x14,0x14,0x14,0x08], 'q' : [0x08,0x14,0x14,0x18,0x7c],
+    'r' : [0x7c,0x08,0x04,0x04,0x08], 's' : [0x48,0x54,0x54,0x54,0x20],
+    't' : [0x04,0x3f,0x44,0x40,0x20], 'u' : [0x3c,0x40,0x40,0x20,0x7c],
+    'v' : [0x1c,0x20,0x40,0x20,0x1c], 'w' : [0x3c,0x40,0x30,0x40,0x3c],
+    'x' : [0x44,0x28,0x10,0x28,0x44], 'y' : [0x0c,0x50,0x50,0x50,0x3c],
+    'z' : [0x44,0x64,0x54,0x4c,0x44], '{' : [0x00,0x08,0x36,0x41,0x41],
+    '|' : [0x00,0x00,0x7f,0x00,0x00], '}' : [0x41,0x41,0x36,0x08,0x00],
+    '~' : [0x04,0x02,0x04,0x08,0x04],
+    }
+
+With the look up table created, I then started writing the program by importing any needed files and defining my variables. Notice that only ACCEL is imported from the OpenElectrons_LSM303 file. Because the LSM303 chip contains a magnetometer as well as an accelerometer, the library contains two separate classes. Also, notice the 'str' variable. This is the string the magic wand will display.
+
+import time
+import os, sys
+from OpenElectrons_i2c import OpenElectrons_i2c
+from OpenElectrons_LSM303 import ACCEL
+    
+test = 1
+oe = OpenElectrons_i2c(0x38)
+lsm = ACCEL()
+str = "MagPi Rocks!!!"
+length = len(str)
+index = 0
+test = 1
+g = 9.81
+t = .05
+print str
+
+The while loop starts by turning off the LEDs. Next it reads the accelerometer value along the X-axis then quickly reads the value again. With these two values a simplified calculation of acceleration can be performed.
+
+while test == 1:
+    #turn leds off
+    oe.simpleWriteByte(0xff)
+    #get first value
+    array = lsm.readArray(lsm.ACCEL_X_Y_Z | 0x80, 6)
+    aclraw = lsm.accl(array, 0)
+    time.sleep(t)
+    #get second value
+    array = lsm.readArray(lsm.ACCEL_X_Y_Z | 0x80, 6)
+    aclraw2 = lsm.accl(array, 0)
+    #divide values to compensate for gravity and subtract to find delta
+    acl = (aclraw2/g) - (aclraw/g)
+    #filter approximate still values
+    if acl <= 30 and acl >= -30:
+        acl = 0
+
+This if statement and while loop actually light the LEDS. The while loop accesses the look up table for every letter in the string one at time. This allows any message inserted into the 'str' variable to be displayed without any other changes in the program. 
+
+ #if moving from right to left display string
+    if (acl) > 0:
+        time.sleep(.15)
+        while index < length:
+            for number in lookuptable[str[index]]:
+                oe.simpleWriteByte(~number)
+            index = index + 1
+            #turn off leds for a short time to account for letter spacing
+            oe.simpleWriteByte(0xff)
+            time.sleep(.0015)
+        #reset string
+        index = 0
+
+A link to the code in its entirety is shown below. Have fun creating images and messages with your own magic wand. 
+
+LSM303 Magnetometer
+
+When creating your own magic wand you may come across various issues with certain wand designs. If the wand changes direction at any given time, you will encounter a rapid deceleration. This causes the static and dynamic accelerometer readings to clash, resulting in unwanted input data. If you are a mathematician or are extremely knowledgeable about advance physics concepts, this may be a fun project for you. But for everyone else, you may want to use the LSM303 magnetometer. The code has a few differences, but once you figure out the proper magnetic readings it is very easy. The magnetometer reads the Earth's magnetic field so readings will be different depending on direction and location.
+
+Useful links
+
+OpenElectrons.com full magic wand project kit and program http://www.openelectrons.com/pages/63
+
+OpenElectrons.com SmartUPS http://www.openelectrons.com/pages/33
+
+
+
+
