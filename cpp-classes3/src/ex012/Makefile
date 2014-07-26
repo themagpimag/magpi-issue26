@@ -1,25 +1,17 @@
-# W. H. Bell
-# A Makefile to build ParticleOper.exe
-
 CC=g++
-TARGET=ParticleOper
-OBJECTS=main.o BasicParticle.o
-INCFLAGS=
+TARGET=op
+OBJECTS=main.o TwoVector.o
 
-$(TARGET).exe: $(OBJECTS)
-	@echo "**"
+$(TARGET): $(OBJECTS)
 	@echo "** Linking Executable"
-	@echo "**"
-	$(CC) $(OBJECTS) -o $(TARGET).exe
+	$(CC) $(OBJECTS) -o $(TARGET)
 
 clean:
 	@rm -f *.o *~
 
 veryclean: clean
-	@rm -f $(TARGET).exe
+	@rm -f $(TARGET)
 
-%.o: %.cc
-	@echo "**"
+%.o: %.cpp
 	@echo "** Compiling C++ Source" 
-	@echo "**"
 	$(CC) -c $(INCFLAGS) $< 

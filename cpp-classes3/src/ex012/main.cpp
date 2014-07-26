@@ -2,29 +2,27 @@
 ** A program to demonstrate the usage of operator overloading
 */
 
+#include "TwoVector.h"
 #include <iostream>
-#include "BasicParticle.h"
+#include <cmath>
 
 using namespace std;
 
 int main() {
-  double fourvector1[4] = {3.0, 4.0, 5.0, 7.35};
-  double fourvector2[4] = {2.0, 2.0, 1.0, 3.0};
-  double fourvector3[4];
 
-  BasicParticle *particle1 = new BasicParticle(fourvector1);
-  BasicParticle *particle2 = new BasicParticle(fourvector2);
-  BasicParticle particle3 = *particle1 + (*particle2);
+  TwoVector vec1(3.,4.);
+  TwoVector vec2;
+  vec2 = vec1;
+  std::cout << "vec2{x=" << vec2.x() 
+	    << ", y=" << vec2.y() << "}" << std::endl;
+  std::cout << "vec1.resultant()=" << vec1.resultant() << std::endl;
+  std::cout << "vec2.angle()=" << (vec2.angle()/M_PI)*180. << " degrees" << std::endl;
+  vec2.rotate(M_PI/2.0); // Rotate by 90 degrees
+  std::cout << "After rotation vec2{x=" << vec2.x() 
+	    << ", y=" << vec2.y() << "}" << std::endl;
   
-  particle3.getFourVector(fourvector3);
-  for (int i=0;i<4;i++) 
-    cout << "fourvector3[" << i << "]="
-  	 << fourvector3[i] << endl;
-  cout << "particle 3 mass = " << particle3.getMass() << endl;
-  cout << "particle 3 pt = " << particle3.getPt() << endl;
-
-  delete particle1;
-  delete particle2;
-
+  vec1 = vec1 - vec2;
+  std::cout << "vec1-vec2 = {x=" << vec1.x() 
+	    << ", y=" << vec1.y() << "}" << std::endl;
   return 0;
 }

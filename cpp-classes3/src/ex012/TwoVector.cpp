@@ -1,74 +1,41 @@
-/* W. H. Bell
-** A simple representation of a particle.
-*/
-
-#include "BasicParticle.h"
+#include "TwoVector.h"
 #include <cmath>
-#include <iostream>
 
-using namespace std;
-
-/** Constructors ********************/
-BasicParticle::BasicParticle(): m_pt(0.),
-                                m_mass(0.) {
-  for(int i=0;i<4;i++) m_fourvector[i] = 0.;
+TwoVector::TwoVector(double x, double y): 
+  m_x(x),
+  m_y(y) {
 }
 
-BasicParticle::BasicParticle(double *fourvector) {
-  assignFourVector(fourvector);
+double TwoVector::resultant(void) const {
+  double r = std::pow(m_x,2) + std::pow(m_y,2);
+  if(r > 0.) r = std::sqrt(r);
+  return r;
 }
 
-/** Public member functions *********/
-void BasicParticle::assignFourVector(double *fourvector) {
-  cout << "Assigning fourvector to particle:" << endl;
-  for(int i=0;i<4;i++) {
-    m_fourvector[i] = fourvector[i];
-    cout << "fourvector[" << i << "]="
-	 << fourvector[i] << endl;
-  }
-  cout << endl;
-
-  calculatePt();
-  calculateMass();
+double TwoVector::angle(void) const {
+  double r = resultant();
+  if(r <= 0.) return 0.;
+  return std::acos(m_x/r); // angle in radians
 }
 
-double BasicParticle::getPt() {
-  return m_pt;
+void TwoVector::rotate(double theta) {
+  double x = m_x, y = m_y; // Store the current values;
+  m_x = x*std::cos(theta) - y*std::sin(theta);
+  m_y = x*std::sin(theta) + y*std::cos(theta);
 }
 
-double BasicParticle::getMass() {
-  return m_mass;
+TwoVector TwoVector::operator+(const TwoVector& twoVector) {
+  m_x += twoVector.m_x;
+  m_y += twoVector.m_y;
 }
 
-/** Private member functions ********/
-void BasicParticle::calculatePt() {
-  m_pt = sqrt(pow(m_fourvector[0],2)+pow(m_fourvector[1],2));
+TwoVector TwoVector::operator-(const TwoVector& twoVector) {
+  m_x -= twoVector.m_x;
+  m_y -= twoVector.m_y;
 }
 
-void BasicParticle::calculateMass() {
-  double msq;
-
-  msq = std::pow(m_fourvector[3],2)-std::pow(m_fourvector[0],2)
-        - std::pow(m_fourvector[1],2)-std::pow(m_fourvector[2],2);
-
-  if(msq<0) {
-    cerr << "Error: invalid fourvector.  Mass squared = "
-	 << msq << endl;
-    m_mass = 0.;
-  }
-  else {
-    m_mass = std::sqrt(msq);
-  }
-}
-
-void BasicParticle::getFourVector(double *fourvector) {
-  for (int i=0;i<4;i++) fourvector[i] = m_fourvector[i];
-}
-
-BasicParticle BasicParticle::operator+(BasicParticle particle) {
-  double resultant[4];
-
-  for (int i=0;i<4;i++) resultant[i] = m_fourvector[i] + particle.m_fourvector[i];
-  return BasicParticle(resultant);
+TwoVector& TwoVector::operator=(const TwoVector& twoVector) {
+  m_x = twoVector.m_x;
+  m_y = twoVector.m_y;
 }
 
