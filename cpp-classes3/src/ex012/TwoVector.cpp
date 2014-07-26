@@ -24,18 +24,23 @@ void TwoVector::rotate(double theta) {
   m_y = x*std::sin(theta) + y*std::cos(theta);
 }
 
-TwoVector TwoVector::operator+(const TwoVector& twoVector) {
-  m_x += twoVector.m_x;
-  m_y += twoVector.m_y;
+TwoVector TwoVector::operator+(const TwoVector& rhs) const {
+  TwoVector twoVector = *this; // Copy this object
+  twoVector.m_x += rhs.m_x;
+  twoVector.m_y += rhs.m_y;
+  return twoVector;
 }
 
-TwoVector TwoVector::operator-(const TwoVector& twoVector) {
-  m_x -= twoVector.m_x;
-  m_y -= twoVector.m_y;
+TwoVector TwoVector::operator-(const TwoVector& rhs) const {
+  TwoVector twoVector = *this; // Copy this object
+  twoVector.m_x -= rhs.m_x;
+  twoVector.m_y -= rhs.m_y;
+  return twoVector;
 }
 
-TwoVector& TwoVector::operator=(const TwoVector& twoVector) {
-  m_x = twoVector.m_x;
-  m_y = twoVector.m_y;
+TwoVector& TwoVector::operator=(const TwoVector& rhs) {
+  m_x = rhs.m_x;
+  m_y = rhs.m_y;
+  return *this;
 }
 

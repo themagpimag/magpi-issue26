@@ -11,8 +11,8 @@ public:
   double resultant(void) const; // Resultant
   double angle(void) const; // Angle of vector in x-y plane
   void rotate(double theta); // Rotate the two vector about itself
-  TwoVector operator+(const TwoVector& twoVector); // Addition
-  TwoVector operator-(const TwoVector& twoVector); // Subtraction
+  TwoVector operator+(const TwoVector& twoVector) const; // Addition
+  TwoVector operator-(const TwoVector& twoVector) const; // Subtraction
   TwoVector& operator=(const TwoVector& twoVector); // Assignment
   double x(void) const { return m_x; } // Return the x component
   double y(void) const { return m_y; } // Return the y component
