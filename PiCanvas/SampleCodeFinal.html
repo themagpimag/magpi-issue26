@@ -1,0 +1,37 @@
+<!-- saved from url=(0022)http://internet.e-mail -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>sample</title>
+<script type="application/javascript">
+var canvasWidth = 400;
+var canvasHeight = 225;
+setInterval(eachTick, 1000); 
+var count = 0;
+function eachTick(){
+count = count + 1;
+if(count == 1){
+draw();
+}
+if(count == 5){
+var cc = document.getElementById("canvas1").getContext("2d");
+cc.clearRect(0,0,canvasWidth, canvasHeight);
+count = 0;
+}
+}
+function draw(){
+var cc = document.getElementById("canvas1").getContext("2d");
+var hue1 = Math.random()*360;
+var color1 = "hsla(" + hue1 + ",100%,50%,1)";
+cc.fillStyle = color1;
+var x1 = Math.random() * 100;
+var y1 = Math.random() * 100;
+cc.fillRect(x1,y1,150,100);
+}
+</script>
+</head>
+<body>
+<canvas id="canvas1" width="400" height="225"></canvas>
+</body>
+</html>
