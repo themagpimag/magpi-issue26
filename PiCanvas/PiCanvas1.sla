@@ -212,7 +212,7 @@
             <ITEXT CH="What is Pi Canvas?"/>
             <para PARENT="Body title"/>
             <para PARENT="Body text"/>
-            <ITEXT CH="Pi Canvas is a Raspberry Pi mounted on a HDTV that has a USB connector to power the Raspberry Pi. The Pi Canvas has no keyboard, no mouse, nor does it respond to the TV remote control. It is simple to use. Just hang it on the wall,  plug it in,  press the power button and let it do its thing. "/>
+            <ITEXT CH="Pi Canvas is a Raspberry Pi mounted on an HDTV that has a USB connector to power the Raspberry Pi. The Pi Canvas has no keyboard, no mouse, nor does it respond to the TV remote control. It is simple to use. Just hang it on the wall,  plug it in,  press the power button and let it do its thing. "/>
             <para PARENT="Body text"/>
             <para PARENT="Body text"/>
             <ITEXT CH="The Pi Canvas can operate 24/7 or be powered on and off as required. It can also be made to interact with its environment through electronic sensors (e.g. ultrasonic or infrared) which opens up even more creative opportunities."/>
