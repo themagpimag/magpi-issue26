@@ -215,7 +215,7 @@
             <ITEXT CH="Pi Canvas is a Raspberry Pi mounted on a HDTV that has a USB connector to power the Raspberry Pi. The Pi Canvas has no keyboard, no mouse, nor does it respond to the TV remote control. It is simple to use. Just hang it on the wall,  plug it in,  press the power button and let it do its thing. "/>
             <para PARENT="Body text"/>
             <para PARENT="Body text"/>
-            <ITEXT CH="The Pi Canvas can operate 24/7 or be powered on and off as required. It can also be made to interact with its environment through electronic sensors (e.g. ultrasonic or infra-red) which opens up even more creative opportunities."/>
+            <ITEXT CH="The Pi Canvas can operate 24/7 or be powered on and off as required. It can also be made to interact with its environment through electronic sensors (e.g. ultrasonic or infrared) which opens up even more creative opportunities."/>
             <para PARENT="Body text"/>
             <para PARENT="Body title"/>
             <ITEXT CH="How to make a Pi Canvas?"/>
@@ -291,7 +291,7 @@
             <ITEXT CH="When the Raspberry Pi Software Configuration Tool appears, enable the option to boot to desktop."/>
             <para PARENT="Body text"/>
             <para PARENT="Body text"/>
-            <ITEXT CH="Next we will install "/>
+            <ITEXT CH="Next we will install the "/>
             <ITEXT FONT="Monaco Regular" FONTSIZE="10" CH="chromium"/>
             <ITEXT CH=" package plus some other utilities. The "/>
             <ITEXT FONT="Monaco Regular" FONTSIZE="10" CH="unclutter"/>
@@ -358,16 +358,19 @@
             <ITEXT CH="."/>
             <para PARENT="Body text"/>
             <para PARENT="Body text"/>
-            <ITEXT CH="When you restart your Raspberry Pi, the sample artwork should automatically appear."/>
-            <para PARENT="Body text"/>
-            <para PARENT="Body text"/>
-            <ITEXT CH="To exit the artwork press "/>
+            <ITEXT CH="When you restart your Raspberry Pi, the sample artwork should automatically appear. To open a second login press "/>
             <ITEXT FONT="Monaco Regular" FONTSIZE="10" CH="&lt;Ctrl&gt;"/>
             <ITEXT FONTSIZE="10" CH="+"/>
             <ITEXT FONT="Monaco Regular" FONTSIZE="10" CH="&lt;Alt&gt;"/>
             <ITEXT FONTSIZE="10" CH="+"/>
             <ITEXT FONT="Monaco Regular" FONTSIZE="10" CH="F2"/>
-            <ITEXT CH=". This will return you to the Raspberry Pi login prompt."/>
+            <ITEXT CH=". To return back to the art display press "/>
+            <ITEXT FONT="Monaco Regular" FONTSIZE="10" CH="&lt;Ctrl&gt;"/>
+            <ITEXT FONTSIZE="10" CH="+"/>
+            <ITEXT FONT="Monaco Regular" FONTSIZE="10" CH="&lt;Alt&gt;"/>
+            <ITEXT FONTSIZE="10" CH="+"/>
+            <ITEXT FONT="Monaco Regular" FONTSIZE="10" CH="F7"/>
+            <ITEXT CH="."/>
             <para PARENT="Body text"/>
             <para PARENT="Body text"/>
             <ITEXT CH="Pi Canvas artwork"/>
@@ -380,13 +383,16 @@
             <ITEXT CH="The artwork creates a new digital fabric every ten minutes. Drawing the digital fabric is an important visual aspect of the artwork and takes about five minutes."/>
             <para PARENT="Body text"/>
             <para PARENT="Body text"/>
-            <ITEXT CH="The fabric colour is random and the thread colours are random within +/- 45 degrees of the fabric colour on the HSLA (Hue - Saturation - Lightness - Alpha) colour wheel.  Also the thread weight, count and tension are random within limits."/>
+            <ITEXT CH="The fabric colour is random and the thread colours are random within +/- 45 degrees of the fabric colour on the HSLA (Hue - Saturation - Lightness - Alpha) colour wheel.  "/>
             <para PARENT="Body text"/>
             <para PARENT="Body text"/>
             <ITEXT CH="Pi Canvas sample artwork code"/>
             <para PARENT="Body title"/>
             <para PARENT="Body text"/>
-            <ITEXT CH="Here is a sample artwork file which draws a &quot;starburst&quot; approximately every 10 seconds. The hues remain within 30 degrees of the initial, random hue on the HSLA colour wheel. What happens if you change the values of "/>
+            <ITEXT CH="Here is a sample artwork file which draws a &quot;starburst&quot; approximately every 10 seconds. The hues remain within 30 degrees of the initial, random hue on the HSLA colour wheel. "/>
+            <para PARENT="Body text"/>
+            <para PARENT="Body text"/>
+            <ITEXT CH="What happens if you change the values of "/>
             <ITEXT FONT="Monaco Regular" FONTSIZE="10" CH="dhue"/>
             <ITEXT CH=" or "/>
             <ITEXT FONT="Monaco Regular" FONTSIZE="10" CH="tension"/>
@@ -597,7 +603,7 @@
         <PAGEOBJECT OwnPage="2" PTYPE="4" XPOS="128.34708661126" YPOS="1838.39503937032" WIDTH="538.5883465" HEIGHT="730.9944094" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="None" PCOLOR2="None" COLUMNS="2" COLGAP="25.51181102" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" SCALETYPE="1" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="0" PFILE="" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="1" EMBEDDED="1" LOCK="0" LOCKR="0" REVERS="0" TransValue="0" TransValueS="0" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 538.588 0 538.588 0 538.588 0 538.588 0 538.588 730.994 538.588 730.994 538.588 730.994 538.588 730.994 0 730.994 0 730.994 0 730.994 0 730.994 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 538.588 0 538.588 0 538.588 0 538.588 0 538.588 730.994 538.588 730.994 538.588 730.994 538.588 730.994 0 730.994 0 730.994 0 730.994 0 730.994 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="6" BOOKMARK="0" NEXTITEM="-1" BACKITEM="26">
             <PageItemAttributes/>
         </PAGEOBJECT>
-        <PAGEOBJECT OwnPage="2" PTYPE="2" XPOS="128.347086614173" YPOS="1916.22247170275" WIDTH="256.561065673828" HEIGHT="122.043824376778" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="None" PCOLOR2="None" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="0.244576802358273" LOCALSCY="0.244576802358273" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" SCALETYPE="0" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="1" TEXTFLOW="1" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="0" PFILE="figure2.png" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="0" EMBEDDED="0" LOCK="0" LOCKR="0" REVERS="0" TransValue="0" TransValueS="0" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 256.561 0 256.561 0 256.561 0 256.561 0 256.561 122.044 256.561 122.044 256.561 122.044 256.561 122.044 0 122.044 0 122.044 0 122.044 0 122.044 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 256.561 0 256.561 0 256.561 0 256.561 0 256.561 122.044 256.561 122.044 256.561 122.044 256.561 122.044 0 122.044 0 122.044 0 122.044 0 122.044 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="6" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
+        <PAGEOBJECT OwnPage="2" PTYPE="2" XPOS="128.347086614173" YPOS="1902.04924335629" WIDTH="256.561065673828" HEIGHT="122.043824376778" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="None" PCOLOR2="None" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="0.244576802358273" LOCALSCY="0.244576802358273" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" SCALETYPE="0" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="1" TEXTFLOW="1" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="0" PFILE="figure2.png" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="0" EMBEDDED="0" LOCK="0" LOCKR="0" REVERS="0" TransValue="0" TransValueS="0" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 256.561 0 256.561 0 256.561 0 256.561 0 256.561 122.044 256.561 122.044 256.561 122.044 256.561 122.044 0 122.044 0 122.044 0 122.044 0 122.044 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 256.561 0 256.561 0 256.561 0 256.561 0 256.561 122.044 256.561 122.044 256.561 122.044 256.561 122.044 0 122.044 0 122.044 0 122.044 0 122.044 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="6" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
             <trail/>
             <PageItemAttributes/>
         </PAGEOBJECT>
@@ -641,7 +647,7 @@
             <trail/>
             <PageItemAttributes/>
         </PAGEOBJECT>
-        <PAGEOBJECT OwnPage="2" PTYPE="6" XPOS="410.25" YPOS="1839" WIDTH="256.685424804688" HEIGHT="730.5" RADRECT="0" FRTYPE="0" CLIPEDIT="1" PWIDTH="1" PCOLOR="Theme" PCOLOR2="None" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="30" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" SCALETYPE="1" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="0" PFILE="" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="1" EMBEDDED="1" LOCK="0" LOCKR="0" REVERS="0" TransValue="0" TransValueS="0" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 256.685 0 256.685 0 256.685 0 256.685 0 256.685 730.5 256.685 730.5 256.685 730.5 256.685 730.5 0 730.5 0 730.5 0 730.5 0 730.5 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 256.685 0 256.685 0 256.685 0 256.685 0 256.685 730.5 256.685 730.5 256.685 730.5 256.685 730.5 0 730.5 0 730.5 0 730.5 0 730.5 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="12" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
+        <PAGEOBJECT OwnPage="2" PTYPE="6" XPOS="410.25" YPOS="1839" WIDTH="256.685" HEIGHT="730.5" RADRECT="0" FRTYPE="0" CLIPEDIT="1" PWIDTH="1" PCOLOR="Theme" PCOLOR2="None" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="30" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" SCALETYPE="1" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="0" PFILE="" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="1" EMBEDDED="1" LOCK="0" LOCKR="0" REVERS="0" TransValue="0" TransValueS="0" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 256.685 0 256.685 0 256.685 0 256.685 0 256.685 730.5 256.685 730.5 256.685 730.5 256.685 730.5 0 730.5 0 730.5 0 730.5 0 730.5 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 256.685 0 256.685 0 256.685 0 256.685 0 256.685 730.5 256.685 730.5 256.685 730.5 256.685 730.5 0 730.5 0 730.5 0 730.5 0 730.5 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="12" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
             <trail/>
             <PageItemAttributes/>
         </PAGEOBJECT>
@@ -658,7 +664,7 @@
             <trail/>
             <PageItemAttributes/>
         </PAGEOBJECT>
-        <PAGEOBJECT OwnPage="2" PTYPE="6" XPOS="128.347091674805" YPOS="2333.25" WIDTH="256.685424804688" HEIGHT="235.883911132812" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="Theme" PCOLOR2="None" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="30" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" SCALETYPE="1" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="0" PFILE="" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="1" EMBEDDED="1" LOCK="0" LOCKR="0" REVERS="0" TransValue="0" TransValueS="0" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 256.685 0 256.685 0 256.685 0 256.685 0 256.685 235.884 256.685 235.884 256.685 235.884 256.685 235.884 0 235.884 0 235.884 0 235.884 0 235.884 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 256.685 0 256.685 0 256.685 0 256.685 0 256.685 235.884 256.685 235.884 256.685 235.884 256.685 235.884 0 235.884 0 235.884 0 235.884 0 235.884 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="12" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
+        <PAGEOBJECT OwnPage="2" PTYPE="6" XPOS="128.347091674805" YPOS="2330.25" WIDTH="256.685424804688" HEIGHT="238.883911132812" RADRECT="0" FRTYPE="0" CLIPEDIT="1" PWIDTH="1" PCOLOR="Theme" PCOLOR2="None" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="30" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" SCALETYPE="1" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="0" PFILE="" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="1" EMBEDDED="1" LOCK="0" LOCKR="0" REVERS="0" TransValue="0" TransValueS="0" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 256.685 0 256.685 0 256.685 0 256.685 0 256.685 238.884 256.685 238.884 256.685 238.884 256.685 238.884 0 238.884 0 238.884 0 238.884 0 238.884 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 256.685 0 256.685 0 256.685 0 256.685 0 256.685 238.884 256.685 238.884 256.685 238.884 256.685 238.884 0 238.884 0 238.884 0 238.884 0 238.884 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="12" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
             <trail/>
             <PageItemAttributes/>
         </PAGEOBJECT>
