@@ -252,7 +252,7 @@
             <ITEXT FONT="Monaco Regular" FONTSIZE="11" CH="pygame.error"/>
             <ITEXT CH=" for debugging purposes."/>
             <para PARENT="Body text"/>
-            <ITEXT CH="When creating the code to actually move the robot, it is helpful to create a sepate function for that purpose. "/>
+            <ITEXT CH="When creating the code to actually move the robot, it is helpful to create a separate function for that purpose. "/>
             <para PARENT="Body text"/>
             <para PARENT="Body text"/>
             <ITEXT CH="The function is as follows:"/>
@@ -328,13 +328,13 @@
             <ITEXT CH="C interface. "/>
             <para PARENT="Body text"/>
             <para PARENT="Body text"/>
-            <ITEXT CH="The programming interface (API) is coded in Python and contains various different functions that allow you to control the motors in a variety of different ways. Two motors can be connected to the SmartDrive the  two black screw terminals labeled M1 and M2. (The third black screw terminal is for power). It is also possible to program the SmartDrive with the C language."/>
+            <ITEXT CH="The programming interface (API) is coded in Python and contains various different functions that allow you to control the motors in a variety of different ways. Two motors can be connected to the SmartDrive the  two black screw terminals labeled M1 and M2. (The third black screw terminal is for power.) It is also possible to program the SmartDrive with the C language."/>
             <para PARENT="Body text"/>
             <para PARENT="Body text"/>
             <ITEXT CH="There are functions that allow you to run the motor in terms of degrees turned, time run in seconds and even for a certain number of rotations. It also supports rotary encoders. A nice bonus feature of the SmartDrive is that it is capable of providing a 5V output which can be used to power the Raspberry Pi without using another power source. "/>
             <para PARENT="Body text"/>
             <para/>
-            <ITEXT CH="References:"/>
+            <ITEXT CH="Parts List:"/>
             <para/>
             <ITEXT CH="1. SmartDrive: "/>
             <ITEXT FCOLOR="Blue" CH="http://www.openelectrons.com/pages/34"/>
