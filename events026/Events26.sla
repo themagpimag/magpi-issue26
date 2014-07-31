@@ -135,7 +135,7 @@
             <para PARENT="Body Text Cent"/>
             <para PARENT="Body Text Cent"/>
             <ITEXT CH="When: "/>
-            <ITEXT FCOLOR="Raspberry Red" FSHADE="100" CH="Wednesday 3rd September 2014, evening"/>
+            <ITEXT FCOLOR="Raspberry Red" FSHADE="100" CH="Wednesday 3rd September 2014, 8.00pm to 10.00pm"/>
             <para PARENT="Body Text Cent"/>
             <ITEXT CH="Where: "/>
             <ITEXT FCOLOR="Raspberry Red" FSHADE="100" CH="The Roebuck PH, Stockbridge Road, Winchester, SO23 7BZ, UK"/>
