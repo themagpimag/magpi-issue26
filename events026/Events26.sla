@@ -11,9 +11,12 @@
         <COLOR NAME="Black" CMYK="#000000ff" Spot="0" Register="0"/>
         <COLOR NAME="Blue" RGB="#0000ff" Spot="0" Register="0"/>
         <COLOR NAME="Cyan" RGB="#00ffff" Spot="0" Register="0"/>
+        <COLOR NAME="FromSVG#000000" RGB="#000000" Spot="0" Register="0"/>
+        <COLOR NAME="FromSVG#cccccc" RGB="#cccccc" Spot="0" Register="0"/>
         <COLOR NAME="Green" RGB="#00ff00" Spot="0" Register="0"/>
         <COLOR NAME="Grey-Mid" RGB="#808080" Spot="0" Register="0"/>
         <COLOR NAME="GreyDark" RGB="#757575" Spot="0" Register="0"/>
+        <COLOR NAME="MagPi Pink" RGB="#bd1042" Spot="0" Register="0"/>
         <COLOR NAME="Magenta" RGB="#ff00ff" Spot="0" Register="0"/>
         <COLOR NAME="New Colour" RGB="#e6e6e6" Spot="0" Register="0"/>
         <COLOR NAME="Orange Red" RGB="#ff4500" Spot="0" Register="0"/>
@@ -26,7 +29,7 @@
         <COLOR NAME="python pit" RGB="#3771a2" Spot="0" Register="0"/>
         <COLOR NAME="python pit yellow" RGB="#fec93d" Spot="0" Register="0"/>
         <HYPHEN/>
-        <STYLE NAME="Default Paragraph Style" DefaultStyle="1" ALIGN="0" LINESPMode="0" LINESP="15" INDENT="0" RMARGIN="0" FIRST="0" VOR="0" NACH="0" DROP="0" DROPLIN="2" DROPDIST="0"/>
+        <STYLE NAME="Default Paragraph Style" ALIGN="0" LINESPMode="0" LINESP="15" INDENT="0" RMARGIN="0" FIRST="0" VOR="0" NACH="0" DROP="0" DROPLIN="2" DROPDIST="0"/>
         <STYLE NAME="Body  Headings" ALIGN="1" LINESPMode="0" LINESP="19.5" INDENT="0" RMARGIN="0" FIRST="0" VOR="0" NACH="0" DROP="0" DROPLIN="2" DROPDIST="0" FONT="FreeSans Bold" FONTSIZE="18.5" FEATURES="" FCOLOR="Black" FSHADE="100" SCOLOR="Black" SSHADE="100" TXTSHX="5" TXTSHY="-5" TXTOUT="1" TXTULP="-0.1" TXTULW="-0.1" TXTSTP="-0.1" TXTSTW="-0.1" SCALEH="100" SCALEV="100" BASEO="0" KERN="0"/>
         <STYLE NAME="Body Text" ALIGN="3" LINESPMode="0" LINESP="14" INDENT="0" RMARGIN="0" FIRST="0" VOR="0" NACH="0" DROP="0" DROPLIN="2" DROPDIST="0" FONT="FreeSans Regular" FONTSIZE="12" FEATURES="inherit" FCOLOR="Black" FSHADE="100" SCOLOR="Black" SSHADE="100" TXTSHX="5" TXTSHY="-5" TXTOUT="1" TXTULP="-0.1" TXTULW="-0.1" TXTSTP="-0.1" TXTSTW="-0.1" SCALEH="100" SCALEV="100" BASEO="0" KERN="0"/>
         <STYLE NAME="Code Text" ALIGN="3" LINESPMode="0" LINESP="12" INDENT="0" RMARGIN="0" FIRST="0" VOR="0" NACH="0" DROP="0" DROPLIN="2" DROPDIST="0" FONT="Courier 10 Pitch Bold" FONTSIZE="10" FEATURES="inherit" FCOLOR="Grey-Mid" FSHADE="100" SCOLOR="Black" SSHADE="100" TXTSHX="5" TXTSHY="-5" TXTOUT="1" TXTULP="-0.1" TXTULW="-0.1" TXTSTP="-0.1" TXTSTW="-0.1" SCALEH="100" SCALEV="100" BASEO="0" KERN="0"/>
@@ -42,15 +45,17 @@
         <STYLE NAME="4pt padding" ALIGN="0" LINESPMode="0" LINESP="4.8" INDENT="0" RMARGIN="0" FIRST="0" VOR="0" NACH="0" DROP="0" DROPLIN="2" DROPDIST="0" FONT="Nimbus Sans L Regular Condensed" FONTSIZE="4" FEATURES="inherit" FCOLOR="Black" FSHADE="100" SCOLOR="Black" SSHADE="100" TXTSHX="5" TXTSHY="-5" TXTOUT="1" TXTULP="-0.1" TXTULW="-0.1" TXTSTP="-0.1" TXTSTW="-0.1" SCALEH="100" SCALEV="100" BASEO="0" KERN="0"/>
         <STYLE NAME="Body Heading Clean" ALIGN="0" LINESPMode="0" LINESP="14.4" INDENT="0" RMARGIN="0" FIRST="0" VOR="0" NACH="0" DROP="0" DROPLIN="2" DROPDIST="0" FONT="FreeSans Bold" FONTSIZE="12" FEATURES="inherit" FCOLOR="Black" FSHADE="100" SCOLOR="Black" SSHADE="100" TXTSHX="5" TXTSHY="-5" TXTOUT="1" TXTULP="-0.1" TXTULW="-0.1" TXTSTP="-0.1" TXTSTW="-0.1" SCALEH="100" SCALEV="100" BASEO="0" KERN="0"/>
         <STYLE NAME="Body text" ALIGN="3" LINESP="15" LANGUAGE="English"/>
+        <STYLE NAME="Copy of Body text (1)" ALIGN="3" FONT="FreeSans Regular" FONTSIZE="12" LANGUAGE="English"/>
         <CHARSTYLE CNAME="Default Character Style" DefaultStyle="1" FONT="Bitstream Charter Bold" FONTSIZE="12" FEATURES="inherit" FCOLOR="Black" FSHADE="100" SCOLOR="Black" SSHADE="100" TXTSHX="5" TXTSHY="-5" TXTOUT="1" TXTULP="-0.1" TXTULW="-0.1" TXTSTP="-0.1" TXTSTW="-0.1" SCALEH="100" SCALEV="100" BASEO="0" KERN="0" LANGUAGE="English"/>
         <CHARSTYLE CNAME="Copy of Default Character Style (1)" FONT="FreeSans Regular" FONTSIZE="12" FEATURES="inherit" FCOLOR="Black" FSHADE="100" SCOLOR="Black" SSHADE="100" TXTSHX="5" TXTSHY="-5" TXTOUT="1" TXTULP="-0.1" TXTULW="-0.1" TXTSTP="-0.1" TXTSTW="-0.1" SCALEH="100" SCALEV="100" BASEO="0" KERN="0" LANGUAGE="English"/>
         <CHARSTYLE CNAME="Copy of Default Character Style (2)" FONT="FreeSans Regular" FONTSIZE="12" FEATURES="inherit" FCOLOR="Black" FSHADE="100" SCOLOR="Black" SSHADE="100" TXTSHX="5" TXTSHY="-5" TXTOUT="1" TXTULP="-0.1" TXTULW="-0.1" TXTSTP="-0.1" TXTSTW="-0.1" SCALEH="100" SCALEV="100" BASEO="0" KERN="0" LANGUAGE="English"/>
+        <CHARSTYLE CNAME="Copy of Default Character Style (3)" FONT="" FONTSIZE="12" FEATURES="inherit" FCOLOR="Black" FSHADE="100" SCOLOR="Black" SSHADE="100" TXTSHX="5" TXTSHY="-5" TXTOUT="1" TXTULP="-0.1" TXTULW="-0.1" TXTSTP="-0.1" TXTSTW="-0.1" SCALEH="100" SCALEV="100" BASEO="0" KERN="0" LANGUAGE="English"/>
         <LAYERS NUMMER="0" LEVEL="0" NAME="Background" SICHTBAR="1" DRUCKEN="1" EDIT="1" FLOW="1" TRANS="1" BLEND="0" OUTL="0" LAYERC="#000000"/>
-        <LAYERS NUMMER="1" LEVEL="4" NAME="PageNumberLeft" SICHTBAR="0" DRUCKEN="0" EDIT="1" FLOW="1" TRANS="1" BLEND="0" OUTL="0" LAYERC="#ff0000"/>
+        <LAYERS NUMMER="1" LEVEL="4" NAME="PageNumberLeft" SICHTBAR="1" DRUCKEN="1" EDIT="1" FLOW="1" TRANS="1" BLEND="0" OUTL="0" LAYERC="#ff0000"/>
         <LAYERS NUMMER="2" LEVEL="1" NAME="Images" SICHTBAR="1" DRUCKEN="1" EDIT="1" FLOW="1" TRANS="1" BLEND="0" OUTL="0" LAYERC="#00ff00"/>
         <LAYERS NUMMER="3" LEVEL="2" NAME="Text" SICHTBAR="1" DRUCKEN="1" EDIT="1" FLOW="1" TRANS="1" BLEND="0" OUTL="0" LAYERC="#0000ff"/>
         <LAYERS NUMMER="4" LEVEL="3" NAME="Header and footer bar" SICHTBAR="1" DRUCKEN="1" EDIT="1" FLOW="1" TRANS="1" BLEND="0" OUTL="0" LAYERC="#00ffff"/>
-        <LAYERS NUMMER="5" LEVEL="5" NAME="PageNumberRight" SICHTBAR="1" DRUCKEN="1" EDIT="1" FLOW="1" TRANS="1" BLEND="0" OUTL="0" LAYERC="#ff00ff"/>
+        <LAYERS NUMMER="5" LEVEL="5" NAME="PageNumberRight" SICHTBAR="0" DRUCKEN="0" EDIT="1" FLOW="1" TRANS="1" BLEND="0" OUTL="0" LAYERC="#ff00ff"/>
         <Printer firstUse="1" toFile="0" useAltPrintCommand="0" outputSeparations="0" useSpotColors="1" useColor="1" mirrorH="1" mirrorV="1" useICC="1" doGCR="1" doClip="1" setDevParam="1" useDocBleeds="1" cropMarks="0" bleedMarks="1" registrationMarks="1" colorMarks="0" includePDFMarks="0" PSLevel="3" PDLanguage="3" markOffset="2.1371303576509e-319" BleedTop="0" BleedLeft="0" BleedRight="0" BleedBottom="0" printer="" filename="" separationName="" printerCommand=""/>
         <PDF firstUse="0" Thumbnails="0" Articles="0" Bookmarks="0" Compress="1" CMethod="1" Quality="2" MirrorH="0" MirrorV="0" Clip="0" RotateDeg="0" PresentMode="0" RecalcPic="1" Grayscale="0" RGBMode="1" UseProfiles="0" UseProfiles2="0" Binding="0" PicRes="300" Resolution="300" Version="15" Intent="1" Intent2="1" SolidP="" ImageP="" PrintP="" InfoString="" BTop="0" BLeft="0" BRight="0" BBottom="0" useDocBleeds="0" cropMarks="0" bleedMarks="0" registrationMarks="0" colorMarks="0" docInfoMarks="0" markOffset="0" ImagePr="0" PassOwner="" PassUser="" Permissions="-4" Encrypt="0" UseLayers="0" UseLpi="0" UseSpotColors="0" doMultiFile="1" displayBookmarks="0" displayFullscreen="0" displayLayers="0" displayThumbs="0" hideMenuBar="0" hideToolBar="0" fitWindow="0" PageLayout="0" openAction="">
             <Fonts Name="Bitstream Charter Bold"/>
@@ -98,7 +103,7 @@
             <para PARENT="Body  Headings" LINESP="13"/>
             <para PARENT="Body Text Cent" LINESP="13"/>
             <ITEXT CH="When: "/>
-            <ITEXT FCOLOR="Raspberry Red" FSHADE="100" CH="Saturday 30th August 2014, 10.30am to 5.00pm"/>
+            <ITEXT FCOLOR="Raspberry Red" FSHADE="100" CH="Saturday 30th August 2014, 10.00am to 5.00pm"/>
             <para PARENT="Body Text Cent" LINESP="13"/>
             <ITEXT CH="Where: "/>
             <ITEXT FCOLOR="Raspberry Red" FSHADE="100" CH="The Shed, John Dalton West, Chester Street, Manchester, M1 5GD, UK"/>
@@ -204,7 +209,7 @@
             <PageItemAttributes/>
         </PAGEOBJECT>
         <PAGEOBJECT OwnPage="0" PTYPE="4" XPOS="109.355291070983" YPOS="833.544494628906" WIDTH="28.3465003967285" HEIGHT="25.1204051971436" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="None" PCOLOR2="None" TXTFILL="Black" TXTSTROKE="Black" TXTSTRSH="100" TXTFILLSH="100" TXTSCALE="100" TXTSCALEV="100" TXTBASE="0" TXTSHX="5" TXTSHY="-5" TXTOUT="1" TXTULP="-0.1" TXTULW="-0.1" TXTSTP="-0.1" TXTSTW="-0.1" TXTKERN="0" COLUMNS="1" COLGAP="14.4" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LINESP="14.4" LINESPMode="0" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" IFONT="Nimbus Sans L Bold Condensed" ISIZE="12" SCALETYPE="1" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="LeftPgNo" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="0" PFILE="" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="1" EMBEDDED="1" LOCK="0" LOCKR="0" REVERS="0" TransValue="0" TransValueS="0" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 28.3465 0 28.3465 0 28.3465 0 28.3465 0 28.3465 25.1204 28.3465 25.1204 28.3465 25.1204 28.3465 25.1204 0 25.1204 0 25.1204 0 25.1204 0 25.1204 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 28.3465 0 28.3465 0 28.3465 0 28.3465 0 28.3465 25.1204 28.3465 25.1204 28.3465 25.1204 28.3465 25.1204 0 25.1204 0 25.1204 0 25.1204 0 25.1204 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" ALIGN="0" LAYER="1" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
-            <ITEXT FONT="FreeSans Bold" FONTSIZE="20" FEATURES="inherit" FCOLOR="Black" FSHADE="100" SCOLOR="Black" SSHADE="100" TXTSHX="5" TXTSHY="-5" TXTOUT="1" TXTULP="-0.1" TXTULW="-0.1" TXTSTP="-0.1" TXTSTW="-0.1" SCALEH="100" SCALEV="100" BASEO="0" KERN="0" CH="40"/>
+            <ITEXT FONT="FreeSans Bold" FONTSIZE="20" FEATURES="inherit" FCOLOR="Black" FSHADE="100" SCOLOR="Black" SSHADE="100" TXTSHX="5" TXTSHY="-5" TXTOUT="1" TXTULP="-0.1" TXTULW="-0.1" TXTSTP="-0.1" TXTSTW="-0.1" SCALEH="100" SCALEV="100" BASEO="0" KERN="0" CH="34"/>
             <trail ALIGN="1"/>
             <PageItemAttributes/>
         </PAGEOBJECT>
@@ -215,7 +220,7 @@
             <para PARENT="Body Text Cent"/>
             <ITEXT FONT="FreeSans Regular" FONTSIZE="12" FCOLOR="Black" TXTSHX="5" TXTSHY="-5" TXTOUT="1" TXTULP="-0.1" TXTULW="-0.1" TXTSTP="-0.1" TXTSTW="-0.1" CH="When: "/>
             <ITEXT FONT="FreeSans Regular" FONTSIZE="12" FCOLOR="Raspberry Red" FSHADE="100" TXTSHX="5" TXTSHY="-5" TXTOUT="1" TXTULP="-0.1" TXTULW="-0.1" TXTSTP="-0.1" TXTSTW="-0.1" CH="Wednesday 20th August 2014, "/>
-            <ITEXT FCOLOR="Raspberry Red" FSHADE="100" CH="3.45pm to 5pm (Student) and 7.30pm to 9pm (Adult)"/>
+            <ITEXT FCOLOR="Raspberry Red" FSHADE="100" CH="3.45pm to 5.00pm (Student) and 7.30pm to 9.00pm (Adult)"/>
             <para PARENT="Body Text Cent"/>
             <ITEXT FONT="FreeSans Regular" FONTSIZE="12" FCOLOR="Black" TXTSHX="5" TXTSHY="-5" TXTOUT="1" TXTULP="-0.1" TXTULW="-0.1" TXTSTP="-0.1" TXTSTW="-0.1" CH="Where: "/>
             <ITEXT FCOLOR="Raspberry Red" FSHADE="100" CH="Wyche Innovation Centre, Walwyn Road, Upper Colwall, Malvern, WR13 6PL, UK"/>
