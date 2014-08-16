@@ -1,0 +1,76 @@
+[logo.jpg]
+Introduction
+
+When doing homebrewing one is faced with different problems. Brewing equipment preferably should be low priced. When doing all-grain
+brewing there is also the need for a system that can control temperature at different points for different times. There are professional brewing
+controllers available but at high prices. So the idea was to build a cheap but comfortable brewing-controller mainly from standard components.
+The controller should have a graphic display, a web interface for configuration and recipe management to make brewing different sorts of beer easier.
+For this tasks the Raspberry Pi seemed to be ideal.
+
+Brewing Beer
+
+Beer is made from malt, hops, water and yeast. To get a beer out of this ingredients several processing-steps are needed.
+These steps are in general:
+- Mashing
+- Lautering
+- Hop boiling
+- Fermentation
+
+[MashingIn.JPG]
+The first step in brewing is the mashing. Within this step the starch of the malt is converted to
+sugar and extracted from the malt and so the wort is obtained. The conversion of the starch to sugar is done by the enzymes contained in
+the malt. To achieve a good working of the enzymes multiple resting at different temperatures is needed.
+These temperatures have to be hold for specific times. That's the point where MashBerry is used. After mashing the malt is separated from the
+wort in a process called lautering. It is basically a kind of filtering. After the lautering the wort is boiled with
+hops. In this step the beer gets hop-flavours and bitterness. Also some chemical processes take place while boiling. These processes
+E.g. will clean the wort from proteins. After boiling the wort is cooled down and yeast is added to ferment the beer.
+The yeast is producing the alcohol in this step. After fermentation the beer is bottled and aged for several weeks till some months
+depending on the type of beer. Then it's ready to drink.
+
+Hardware
+[hw-schema.png]
+To use a Raspberry Pi for brewing control two main interfaces had to be added. The first interface is a temperature sensor for measuring the temperature
+of the mash. There are two possibilities for temp-sensors: A cheap DS1820 sensor or a more accurate PT1000 Sensor with a Hygrosens I2C converter module.
+The Hygrosens module (TEMOD-I2C-R2) is a small module with I2C interface that directly converts the value read from a PT1000 sensor
+to a usable temperature. For using this converter an I2C-Level shifter between 5V and 3V3 is needed to connect it to the Raspberry Pi.
+As an alternative a DS1820 sensor can be used. There are sensors with appropriate metal housing and temperature range (>100°C) available.
+These sensors can be connected to the Raspberry Pi using only a single resistor.
+[circuit.png]
+For controlling the electric heater of the mash tun a Solid state relay (SSR) is used. The SSR is driven by a simple transistor circuit connected
+to a GPIO of the Raspberry Pi. Such a circuit also drives the piezo beeper. The SSR is housed in a external box including power plugs and filters.
+For visualization a 3" TFT display is connected to the Raspberry Pi's composite port. 
+An IR-Receiver can be connected to a GPIO to enable MashBerry to receive IR-Codes from a common IR-remote control.
+
+Software
+The MashBerry software is build using the the Qt-framework. The heart of it is the PID-controller, which is used to control the temperature of the
+mash. The PID-controller uses the temperatures of the temperature-sensor as input and outputs a power-value of 0-100%. The power-value from the PID is fed into a
+kernel-driver which does a real-time control of the gpio's. The driver does the switching of 0-100% in two seconds. So one percent of output-power results in 20ms
+of on-time for the SSR. At 50Hz mains frequency this is one AC cycle per percent. With this method the power of the heater can be controlled very accurate.
+For tuning the PID-parameters there is also an autotuning available.
+[screenshot-settings.jpg]
+The Mashberry Application also implements a GUI for small screens. With this gui recipes can be started and the current status of the mashing-process can
+be monitored. There is also a Web-gui. It is implemented using QtWebApp, a HTTP-Server with template engine for Qt. With the Web-gui all the parameters for
+PID-controller, Sensors etc. can be set. The recipes with the different temperature steps and times are also entered via the Web-gui.
+The MashBerry application runs on a Linux-system without X11 using the embedded Version of Qt4 which runs directly on the framebuffer. So very little resources are used.
+The Software can be downloaded at http://sebastian-duell.de/en/mashberry/index.html
+[screenshot-recipeedit.jpg]
+
+Needed Parts
+
+To build a MashBerry the following parts are needed:
+- 1x Raspberry Pi + SDCard
+- 1x Powersupply with 5V and 12V
+- 1x Housing
+
+- 2x Transistor BC547B
+- 2x Resistor 150 ohms
+- 2x Resistor 100K ohms
+- 3x Resistor 1K5 ohms
+- 1x DS18B20 temp-sensor
+- 1x Piezo-beeper 12V
+- 1x 26pin header for Raspberry Pi connector
+- 1x Solid state relay suitable your power needs
+
+Optional:
+- TSOP31236 IR-receiver
+- 3" TFT Display
